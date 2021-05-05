@@ -2,25 +2,22 @@
 \SV
    m4_makerchip_module   // (Expanded in Nav-TLV pane.)
 \TLV
-  
    //จากสูตร(น+ล)^2 = น^2 + 2นล + ล^2
    |calc
-   //@1
+   @1
    $ff_t[7:0] = $ff[3:0] ** 2; //หน้ากำลังสอง $ff=หน้า
-   //@2
    $bb_t[7:0] = $bb[3:0] ** 2; //หลังกำลังสอง $bb=หลัง
-   //@3
+   @2
    $fb_o[7:0] = 2 * ($ff * $bb) ;    // สองหน้าหลัง
-   //@4
+   @3
    $sum_fbo[15:0] = ($ff_t + $fb_o) + $bb_t; //หน้ากำลังสอง + สองหน้าหลัง + หลังกำลังสอง
    |calc
-      /* @4
          \SV_plus
             always_ff @(posedge clk) begin
                   \$display(" (\%2d + \%2d) ^ 2 = \%2d ^ 2 + 2(\%2d)(\%2d) + \%2d ^ 2", $ff, $bb, $ff , $ff , $bb , $bb );
       //แสดงข้อความอยู่ที่หน้าLog
             end
-   */
+   
    *passed = *cyc_cnt > 60;
 
   
