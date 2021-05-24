@@ -1,0 +1,1 @@
+coap put "coap://coap.nexpie.io/message/home/bedroom?auth=6c36fdee-5273-4318-xxxx-75dfd2c513db:nzxGsGMYnFdfET6qbpifb32U9z5kxxxx" -p "Hello from CoAP"
